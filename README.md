@@ -13,7 +13,7 @@
 把下面一行复制到服务器 SSH 里执行。脚本会先下载到 `/tmp`，再用 `sh` 执行（`sh` 能在 Alpine 上自举 bash）：
 
 ```bash
-if command -v curl >/dev/null 2>&1; then curl -fL --connect-timeout 10 -m 60 -o /tmp/singbox-stats-install.sh https://raw.githubusercontent.com/hytuytujyt/script/main/singbox-stats-install.sh; elif command -v wget >/dev/null 2>&1; then wget -q -T 15 -O /tmp/singbox-stats-install.sh https://raw.githubusercontent.com/hytuytujyt/script/main/singbox-stats-install.sh; elif command -v busybox >/dev/null 2>&1; then busybox wget -q -T 15 -O /tmp/singbox-stats-install.sh https://raw.githubusercontent.com/hytuytujyt/script/main/singbox-stats-install.sh; else echo '需要 curl/wget/busybox 之一（Debian 最小系统可先执行 apt-get install -y curl）' >&2; exit 1; fi && sh /tmp/singbox-stats-install.sh
+if command -v curl >/dev/null 2>&1; then curl -fL --connect-timeout 10 -m 60 -o /tmp/singbox-stats-install.sh https://raw.githubusercontent.com/hytuytujyt/singbox-stats/main/singbox-stats-install.sh; elif command -v wget >/dev/null 2>&1; then wget -q -T 15 -O /tmp/singbox-stats-install.sh https://raw.githubusercontent.com/hytuytujyt/singbox-stats/main/singbox-stats-install.sh; elif command -v busybox >/dev/null 2>&1; then busybox wget -q -T 15 -O /tmp/singbox-stats-install.sh https://raw.githubusercontent.com/hytuytujyt/singbox-stats/main/singbox-stats-install.sh; else echo '需要 curl/wget/busybox 之一（Debian 最小系统可先执行 apt-get install -y curl）' >&2; exit 1; fi && sh /tmp/singbox-stats-install.sh
 ```
 
 Alpine 默认已有 busybox wget，直接执行即可。
